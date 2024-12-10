@@ -30,6 +30,8 @@ export default function AgentDashboard() {
             created_at: new Date().toISOString(),
             is_valid: true
         };
+        // TODO: save ticket to database
+
         setGeneratedTicket(ticket);
     };
 
