@@ -51,6 +51,7 @@ export default function AgentLogin() {
                     <button
                         type="submit"
                         className="w-full bg-cyan-600 text-white p-2 rounded hover:bg-cyan-700 transition duration-300"
+
                     >
                         Se connecter
                     </button>

@@ -19,3 +19,23 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media print {
+  /* Hide everything except the ticket preview section */
+  body .customer-form {
+    visibility: hidden;
+  }
+
+  /* Make the ticket preview fully visible */
+  .print-ticket-section {
+    visibility: visible;
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 60%;
+  }
+
+  .button-print {
+    display: none !important;
+  }
+}

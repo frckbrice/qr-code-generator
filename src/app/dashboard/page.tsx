@@ -66,9 +66,9 @@ export default function AgentDashboard() {
     return (
         <div className='min-h-screen flex items-center justify-center p-4 bg-gray-100'>
             <div className='w-full max-w-4xl mx-auto'>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 bg-white shadow-lg rounded-lg p-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 bg-white  rounded-lg p-6'>
                     {/* Input Section */}
-                    <div className='space-y-4 bg-cyan-50 p-2'>
+                    <div className='space-y-4 bg-cyan-50 p-2 customer-form'>
                         <h2 className="text-2xl font-bold mb-4 text-gray-800">Créer un ticket</h2>
 
                         <div>
@@ -124,8 +124,8 @@ export default function AgentDashboard() {
 
                     {/* Ticket Preview Section */}
                     {generatedTicket && (
-                        <div className='flex flex-col items-center justify-center   rounded-lg'>
-                            <div className='text-center w-full border border-gray-300 rounded-lg p-3 sm:p-6 '>
+                        <div className='flex flex-col items-center justify-center  print-ticket-section'>
+                            <div className='text-center w-full border border-gray-300 shadow-lg rounded-lg p-3 sm:p-6 ticket-customer'>
                                 <h3 className="text-xl font-bold mb-4 text-gray-800">Ticket YAFE</h3>
 
                                 {!!companyLogo && (
@@ -133,6 +133,8 @@ export default function AgentDashboard() {
                                         src={companyLogo}
                                         alt="Logo de l'entreprise"
                                         className="mx-auto mb-4 h-24 w-24 object-cover rounded-full"
+                                        width={100}
+                                        height={100}
                                         priority
                                     />
                                 )}
@@ -153,7 +155,7 @@ export default function AgentDashboard() {
                                 </div>
 
                                 <button
-                                    className="mt-4 w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300"
+                                    className="mt-4 w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300 button-print print:hidden"
                                     onClick={() => window.print()}
                                 >
                                     Imprimer le ticket
