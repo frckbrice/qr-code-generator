@@ -6,6 +6,7 @@ import { useState } from 'react';
 import QRCode from 'react-qr-code';
 import { v4 as uuidv4 } from 'uuid';
 import { Database } from '../../../database.types';
+import Image from 'next/image';
 
 export default function AgentDashboard() {
     const [customerName, setCustomerName] = useState('');
@@ -127,11 +128,12 @@ export default function AgentDashboard() {
                             <div className='text-center w-full border border-gray-300 rounded-lg p-3 sm:p-6 '>
                                 <h3 className="text-xl font-bold mb-4 text-gray-800">Ticket YAFE</h3>
 
-                                {companyLogo && (
-                                    <img
+                                {!!companyLogo && (
+                                    <Image
                                         src={companyLogo}
                                         alt="Logo de l'entreprise"
                                         className="mx-auto mb-4 h-24 w-24 object-cover rounded-full"
+                                        priority
                                     />
                                 )}
 
